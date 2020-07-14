@@ -1,3 +1,5 @@
+$productBorderColor: #f3f3f3;
+
 .card {
   display: flex;
   flex-direction: column;
@@ -6,19 +8,28 @@
   padding: 30px 14px 15px;
   margin-bottom: 50px;
   background: #fff;
-  border: 1px solid #f3f3f3;
+  border: 1px solid $productBorderColor;
   border-radius: 5px;
 
   &__img {
     width: 160px;
     height: 134px;
-    margin-bottom: 45px;
+    transition: transform 1s;
+
+    &:hover {
+      box-sizing: content-box;
+      transform: scale(1.2);
+      outline: 3px solid $productBorderColor;
+      padding: 12px 2px;
+      margin: -12px 0;
+    }
   }
 
   &__title {
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
+    margin-top: 45px;
     margin-bottom: 5px;
   }
 
@@ -62,8 +73,10 @@
     width: 170px;
     height: 40px;
     background: #00acdc;
+    border: 1px solid #00acdc;
     border-radius: 5px;
     cursor: pointer;
+    transition: 1s;
 
     &:hover {
       background: #fff;
