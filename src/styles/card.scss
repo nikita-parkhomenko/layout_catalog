@@ -1,12 +1,39 @@
 $productBorderColor: #f3f3f3;
+$cardWidth: 200px;
+$cardGapX: 48px;
+$cardGapY: 50px;
+
+.main-content {
+  width: $cardWidth;
+
+  display: grid;
+  grid-template-columns: repeat(1, $cardWidth);
+  grid-gap: $cardGapY $cardGapX;
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (min-width: 600px) {
+    width: $cardWidth * 2 + $cardGapX * 1;
+    grid-template-columns: repeat(2, $cardWidth);
+  }
+
+  @media (min-width: 768px) {
+    width: $cardWidth * 3 + $cardGapX * 2;
+    grid-template-columns: repeat(3, $cardWidth);
+  }
+
+  @media (min-width: 992px) {
+    width: $cardWidth * 4 + $cardGapX * 3;
+    grid-template-columns: repeat(4, $cardWidth);
+  }
+}
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: $cardWidth;
   padding: 30px 14px 15px;
-  margin-bottom: 50px;
   background: #fff;
   border: 1px solid $productBorderColor;
   border-radius: 5px;
