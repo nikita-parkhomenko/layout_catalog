@@ -4,27 +4,13 @@ $cardGapX: 48px;
 $cardGapY: 50px;
 
 .main-content {
-  width: $cardWidth;
+  max-width: $cardWidth * 4 + $cardGapX * 3;
 
   display: grid;
-  grid-template-columns: repeat(1, $cardWidth);
+  grid-template-columns: repeat(auto-fill, $cardWidth);
   grid-gap: $cardGapY $cardGapX;
+  justify-content: center;
   margin: 0 auto;
-
-  @media (min-width: 600px) {
-    width: $cardWidth * 2 + $cardGapX * 1;
-    grid-template-columns: repeat(2, $cardWidth);
-  }
-
-  @media (min-width: 768px) {
-    width: $cardWidth * 3 + $cardGapX * 2;
-    grid-template-columns: repeat(3, $cardWidth);
-  }
-
-  @media (min-width: 992px) {
-    width: $cardWidth * 4 + $cardGapX * 3;
-    grid-template-columns: repeat(4, $cardWidth);
-  }
 }
 
 .card {
